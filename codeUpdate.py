@@ -15,5 +15,5 @@ def recursive_sum(n):
     else:
         return n + recursive_sum(n - 1)
 
-# 计算1到20的累加和
-sum_1_to_20 = recursive_sum(20)
+# 计算1到200的累加和
+sum_1_to_200 = recursive_sum(200)
