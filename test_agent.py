@@ -23,8 +23,7 @@ def solve_chicken_rabbit(heads, legs):
 
     return int(chickens), int(rabbits)
 
-
-def main():
+def data():
     print("=" * 30)
     print("     鸡兔同笼问题求解")
     print("=" * 30)
@@ -51,6 +50,5 @@ def main():
     except ValueError:
         print("输入错误，请输入整数！")
 
-
 if __name__ == "__main__":
-    main()
+    data()
