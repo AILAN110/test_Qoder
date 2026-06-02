@@ -1,15 +1,26 @@
 test_tab.py
 import random
 
-# 1. 冒泡排序
+# 1. 冒泡排序 - 优化版本
 def bubble_sort(arr):
+    """
+    优化的冒泡排序算法实现
+    :param arr: 待排序的列表
+    :return: 排序后的列表（原地排序）
+    """
     n = len(arr)
-    for i in range(n - 1):
+    # 外层循环控制排序轮数
+    for i in range(n):
+        # 标记本轮是否发生交换，用于提前结束
         swapped = False
-        for j in range(n - 1 - i):
+        # 内层循环进行相邻元素比较，每轮后最大元素会移到末尾
+        # 所以内层循环范围可逐渐减小 (n - i - 1)
+        for j in range(0, n - i - 1):
             if arr[j] > arr[j + 1]:
+                # 交换相邻元素
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
                 swapped = True
+        # 如果本轮没有发生交换，说明数组已经有序，可以提前结束
         if not swapped:
             break
     return arr
