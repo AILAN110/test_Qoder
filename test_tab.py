@@ -1,3 +1,4 @@
+test_tab.py
 import random
 
 # 1. 冒泡排序
@@ -33,3 +34,50 @@ def quick_sort(arr):
     
     # 递归排序左右两部分，并合并结果
     return quick_sort(left) + middle + quick_sort(right)
+
+# 3. 归并排序
+def merge_sort(arr):
+    """
+    归并排序算法实现
+    :param arr: 待排序的列表
+    :return: 排序后的新列表
+    """
+    if len(arr) <= 1:
+        return arr
+    
+    # 分割数组为两半
+    mid = len(arr) // 2
+    left = arr[:mid]
+    right = arr[mid:]
+    
+    # 递归排序两半
+    left = merge_sort(left)
+    right = merge_sort(right)
+    
+    # 合并已排序的两半
+    return merge(left, right)
+
+def merge(left, right):
+    """
+    合并两个已排序的列表
+    :param left: 左侧已排序的列表
+    :param right: 右侧已排序的列表
+    :return: 合并后的已排序列表
+    """
+    result = []
+    i = j = 0
+    
+    # 比较两个列表中的元素并按顺序合并
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            result.append(left[i])
+            i += 1
+        else:
+            result.append(right[j])
+            j += 1
+    
+    # 添加剩余的元素
+    result.extend(left[i:])
+    result.extend(right[j:])
+    
+    return result
