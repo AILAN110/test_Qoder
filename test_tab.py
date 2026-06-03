@@ -1,51 +1,52 @@
 test_tab.py
 import random
 
-# 1. 冒泡排序 - 鸡尾酒排序（双向冒泡排序）优化版本
+# 1. 鸡尾酒排序（双向冒泡排序）- 高级优化版本
 def bubble_sort(arr):
     """
     鸡尾酒排序（双向冒泡排序）算法实现
-    这是一种冒泡排序的变体，它在每一轮中既向一个方向冒泡，也向另一个方向冒泡，
-    对于某些特定的数据分布可以更快地将元素移动到正确位置
+    这是冒泡排序的变种，在某些情况下比传统冒泡排序更高效
     :param arr: 待排序的列表
     :return: 排序后的新列表
     """
-    if len(arr) <= 1:
-        return arr.copy()
-    
     # 创建数组副本以避免修改原始数组
     result = arr.copy()
     n = len(result)
+    
+    # 如果数组长度小于2，直接返回
+    if n < 2:
+        return result
     
     # 定义左右边界
     left = 0
     right = n - 1
     
     while left < right:
-        # 标记本轮是否发生交换，用于提前结束
+        # 从左到右遍历，将最大值移到右侧
         swapped = False
-        
-        # 正向遍历：将最大值移到右端
         for i in range(left, right):
             if result[i] > result[i + 1]:
                 result[i], result[i + 1] = result[i + 1], result[i]
                 swapped = True
+        # 最大值已就位，右边界左移
+        right -= 1
         
         # 如果没有发生交换，说明数组已经有序
         if not swapped:
             break
-            
-        # 缩小右边界，因为最大值已经就位
-        right -= 1
         
-        # 反向遍历：将最小值移到左端
+        # 从右到左遍历，将最小值移到左侧
+        swapped = False
         for i in range(right, left, -1):
             if result[i] < result[i - 1]:
                 result[i], result[i - 1] = result[i - 1], result[i]
                 swapped = True
-        
-        # 缩小左边界，因为最小值已经就位
+        # 最小值已就位，左边界右移
         left += 1
+        
+        # 如果没有发生交换，说明数组已经有序
+        if not swapped:
+            break
 
     return result
 
