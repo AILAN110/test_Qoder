@@ -153,3 +153,116 @@ def merge_sort(arr):
     # 执行归并排序
     merge_sort_helper(result, temp_arr, 0, len(result) - 1)
     return result
+
+# 4. 堆排序
+def heap_sort(arr):
+    """
+    堆排序算法实现
+    :param arr: 待排序的列表
+    :return: 排序后的新列表
+    """
+    def heapify(arr, n, i):
+        """
+        维护最大堆性质的函数
+        :param arr: 数组
+        :param n: 堆的大小
+        :param i: 当前节点索引
+        """
+        largest = i  # 初始化最大值为根节点
+        left = 2 * i + 1     # 左子节点
+        right = 2 * i + 2    # 右子节点
+
+        # 如果左子节点存在且大于根节点
+        if left < n and arr[left] > arr[largest]:
+            largest = left
+
+        # 如果右子节点存在且大于当前最大值
+        if right < n and arr[right] > arr[largest]:
+            largest = right
+
+        # 如果最大值不是根节点，则交换并继续堆化
+        if largest != i:
+            arr[i], arr[largest] = arr[largest], arr[i]
+            heapify(arr, n, largest)
+
+    # 创建数组副本以避免修改原始数组
+    result = arr.copy()
+    n = len(result)
+
+    # 构建最大堆
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(result, n, i)
+
+    # 逐个提取元素从堆中
+    for i in range(n - 1, 0, -1):
+        # 将当前最大值移到末尾
+        result[i], result[0] = result[0], result[i]
+        # 对剩余元素进行堆化
+        heapify(result, i, 0)
+
+    return result
+
+# 5. 计数排序
+def counting_sort(arr):
+    """
+    计数排序算法实现（适用于非负整数）
+    :param arr: 待排序的列表（仅支持非负整数）
+    :return: 排序后的新列表
+    """
+    if not arr:
+        return []
+
+    # 找到数组中的最大值和最小值
+    max_val = max(arr)
+    min_val = min(arr)
+    range_val = max_val - min_val + 1
+
+    # 创建计数数组
+    count = [0] * range_val
+    output = [0] * len(arr)
+
+    # 统计每个元素出现的次数
+    for num in arr:
+        count[num - min_val] += 1
+
+    # 计算累积计数
+    for i in range(1, range_val):
+        count[i] += count[i - 1]
+
+    # 构建输出数组
+    for i in range(len(arr) - 1, -1, -1):
+        output[count[arr[i] - min_val] - 1] = arr[i]
+        count[arr[i] - min_val] -= 1
+
+    return output
+
+# 6. 希尔排序
+def shell_sort(arr):
+    """
+    希尔排序算法实现（插入排序的改进版）
+    :param arr: 待排序的列表
+    :return: 排序后的新列表
+    """
+    # 创建数组副本以避免修改原始数组
+    result = arr.copy()
+    n = len(result)
+
+    # 初始间隔为数组长度的一半，然后逐步缩小
+    gap = n // 2
+
+    while gap > 0:
+        # 对每个间隔执行插入排序
+        for i in range(gap, n):
+            temp = result[i]
+            j = i
+
+            # 在间隔为gap的子数组中执行插入排序
+            while j >= gap and result[j - gap] > temp:
+                result[j] = result[j - gap]
+                j -= gap
+
+            result[j] = temp
+
+        gap //= 2
+
+    return result
