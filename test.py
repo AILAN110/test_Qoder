@@ -44,3 +44,5 @@ if __name__ == "__main__":
     print("已排序数组:", bubble_sort([1, 2, 3, 4, 5]))
     print("逆序数组:", bubble_sort([5, 4, 3, 2, 1]))
     print("重复元素:", bubble_sort([3, 1, 4, 1, 5, 9, 2, 6, 5]))
+    print("负数:", bubble_sort([-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]))
+    print("浮点数:", bubble_sort([1.1, 2.2, 3.3, 4.4, 5.5]))
