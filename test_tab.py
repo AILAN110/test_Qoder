@@ -1,10 +1,12 @@
 test_tab.py
 import random
 
-# 1. 冒泡排序 - 进一步优化版本
+# 1. 冒泡排序 - 鸡尾酒排序（双向冒泡排序）优化版本
 def bubble_sort(arr):
     """
-    进一步优化的冒泡排序算法实现
+    鸡尾酒排序（双向冒泡排序）算法实现
+    这是一种冒泡排序的变体，它在每一轮中既向一个方向冒泡，也向另一个方向冒泡，
+    对于某些特定的数据分布可以更快地将元素移动到正确位置
     :param arr: 待排序的列表
     :return: 排序后的新列表
     """
@@ -15,30 +17,36 @@ def bubble_sort(arr):
     result = arr.copy()
     n = len(result)
     
-    # 外层循环控制排序轮数
-    for i in range(n):
+    # 定义左右边界
+    left = 0
+    right = n - 1
+    
+    while left < right:
         # 标记本轮是否发生交换，用于提前结束
         swapped = False
         
-        # 优化：记录最后一次交换的位置，该位置之后的元素已经有序
-        last_swap_pos = 0
-        
-        # 内层循环进行相邻元素比较，每轮后最大元素会移到末尾
-        # 所以内层循环范围可逐渐减小 (n - i - 1)
-        for j in range(0, n - i - 1):
-            if result[j] > result[j + 1]:
-                # 交换相邻元素
-                result[j], result[j + 1] = result[j + 1], result[j]
+        # 正向遍历：将最大值移到右端
+        for i in range(left, right):
+            if result[i] > result[i + 1]:
+                result[i], result[i + 1] = result[i + 1], result[i]
                 swapped = True
-                last_swap_pos = j
         
-        # 如果本轮没有发生交换，说明数组已经有序，可以提前结束
+        # 如果没有发生交换，说明数组已经有序
         if not swapped:
             break
+            
+        # 缩小右边界，因为最大值已经就位
+        right -= 1
         
-        # 优化：下次只需检查到最后交换的位置
-        n = last_swap_pos + 1
-    
+        # 反向遍历：将最小值移到左端
+        for i in range(right, left, -1):
+            if result[i] < result[i - 1]:
+                result[i], result[i - 1] = result[i - 1], result[i]
+                swapped = True
+        
+        # 缩小左边界，因为最小值已经就位
+        left += 1
+
     return result
 
 # 2. 快速排序
