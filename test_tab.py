@@ -28,23 +28,55 @@ def bubble_sort(arr):
 # 2. 快速排序
 def quick_sort(arr):
     """
-    快速排序算法实现
+    改进的快速排序算法实现（原地排序，随机化基准）
     :param arr: 待排序的列表
     :return: 排序后的新列表
     """
-    if len(arr) <= 1:
-        return arr
+    import random
     
-    # 选择基准元素（这里选择中间位置的元素）
-    pivot = arr[len(arr) // 2]
+    # 创建数组副本以避免修改原始数组
+    result = arr.copy()
     
-    # 分割数组为三部分：小于基准、等于基准、大于基准
-    left = [x for x in arr if x < pivot]
-    middle = [x for x in arr if x == pivot]
-    right = [x for x in arr if x > pivot]
+    def randomized_partition(low, high):
+        """
+        随机化分区函数
+        :param low: 分区起始索引
+        :param high: 分区结束索引
+        :return: 分区点索引
+        """
+        # 随机选择基准元素并与最后一个元素交换
+        random_index = random.randint(low, high)
+        result[random_index], result[high] = result[high], result[random_index]
+        
+        pivot = result[high]
+        i = low - 1  # 较小元素的索引
+        
+        for j in range(low, high):
+            if result[j] <= pivot:
+                i += 1
+                result[i], result[j] = result[j], result[i]
+        
+        result[i + 1], result[high] = result[high], result[i + 1]
+        return i + 1
+
+    def quick_sort_recursive(low, high):
+        """
+        快速排序的递归实现
+        :param low: 排序范围的起始索引
+        :param high: 排序范围的结束索引
+        """
+        if low < high:
+            # 获取分区索引
+            pi = randomized_partition(low, high)
+            
+            # 递归排序基准前后的子数组
+            quick_sort_recursive(low, pi - 1)
+            quick_sort_recursive(pi + 1, high)
+
+    if len(result) > 1:
+        quick_sort_recursive(0, len(result) - 1)
     
-    # 递归排序左右两部分，并合并结果
-    return quick_sort(left) + middle + quick_sort(right)
+    return result
 
 # 3. 归并排序
 def merge_sort(arr):
