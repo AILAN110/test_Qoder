@@ -27,3 +27,20 @@ def bubble_sort(arr):
             break
     
     return arr
+
+# 测试代码
+if __name__ == "__main__":
+    # 测试用例
+    test_array = [64, 34, 25, 12, 22, 11, 90]
+    print("原始数组:", test_array)
+    
+    sorted_array = bubble_sort(test_array.copy())  # 使用copy()避免修改原数组
+    print("排序后数组:", sorted_array)
+    
+    # 其他测试用例
+    print("\n其他测试用例:")
+    print("空数组:", bubble_sort([]))
+    print("单个元素:", bubble_sort([1]))
+    print("已排序数组:", bubble_sort([1, 2, 3, 4, 5]))
+    print("逆序数组:", bubble_sort([5, 4, 3, 2, 1]))
+    print("重复元素:", bubble_sort([3, 1, 4, 1, 5, 9, 2, 6, 5]))
