@@ -1,4 +1,3 @@
-test_tab.py
 import random
 
 # 1. 鸡尾酒排序（双向冒泡排序）- 高级优化版本
