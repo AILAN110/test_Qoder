@@ -81,46 +81,75 @@ def quick_sort(arr):
 # 3. 归并排序
 def merge_sort(arr):
     """
-    归并排序算法实现
+    改进的归并排序算法实现
     :param arr: 待排序的列表
     :return: 排序后的新列表
     """
     if len(arr) <= 1:
         return arr
-    
-    # 分割数组为两半
-    mid = len(arr) // 2
-    left = arr[:mid]
-    right = arr[mid:]
-    
-    # 递归排序两半
-    left = merge_sort(left)
-    right = merge_sort(right)
-    
-    # 合并已排序的两半
-    return merge(left, right)
 
-def merge(left, right):
-    """
-    合并两个已排序的列表
-    :param left: 左侧已排序的列表
-    :param right: 右侧已排序的列表
-    :return: 合并后的已排序列表
-    """
-    result = []
-    i = j = 0
-    
-    # 比较两个列表中的元素并按顺序合并
-    while i < len(left) and j < len(right):
-        if left[i] <= right[j]:
-            result.append(left[i])
+    def merge_sort_helper(arr, temp_arr, left, right):
+        """
+        归并排序的递归辅助函数
+        :param arr: 原始数组
+        :param temp_arr: 临时数组，用于合并过程
+        :param left: 左边界
+        :param right: 右边界
+        """
+        if left >= right:
+            return
+
+        mid = (left + right) // 2
+        # 递归排序左半部分
+        merge_sort_helper(arr, temp_arr, left, mid)
+        # 递归排序右半部分
+        merge_sort_helper(arr, temp_arr, mid + 1, right)
+        # 合并已排序的两部分
+        merge(arr, temp_arr, left, mid, right)
+
+    def merge(arr, temp_arr, left, mid, right):
+        """
+        合并两个已排序的子数组
+        :param arr: 原始数组
+        :param temp_arr: 临时数组
+        :param left: 左边界
+        :param mid: 中点
+        :param right: 右边界
+        """
+        # 复制数据到临时数组
+        for i in range(left, right + 1):
+            temp_arr[i] = arr[i]
+
+        i = left      # 左子数组的开始
+        j = mid + 1   # 右子数组的开始
+        k = left      # 合并后数组的开始
+
+        # 合并两个子数组
+        while i <= mid and j <= right:
+            if temp_arr[i] <= temp_arr[j]:
+                arr[k] = temp_arr[i]
+                i += 1
+            else:
+                arr[k] = temp_arr[j]
+                j += 1
+            k += 1
+
+        # 复制左子数组的剩余元素
+        while i <= mid:
+            arr[k] = temp_arr[i]
             i += 1
-        else:
-            result.append(right[j])
+            k += 1
+
+        # 复制右子数组的剩余元素
+        while j <= right:
+            arr[k] = temp_arr[j]
             j += 1
-    
-    # 添加剩余的元素
-    result.extend(left[i:])
-    result.extend(right[j:])
-    
+            k += 1
+
+    # 创建数组副本以避免修改原始数组
+    result = arr.copy()
+    # 创建临时数组用于合并过程
+    temp_arr = [0] * len(result)
+    # 执行归并排序
+    merge_sort_helper(result, temp_arr, 0, len(result) - 1)
     return result
