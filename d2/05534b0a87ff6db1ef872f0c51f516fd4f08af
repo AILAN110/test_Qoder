@@ -1,0 +1,25 @@
+app.py
+  s_24e4b202bad5aa::t_9238c0386fe348 58-64
+  h_3ed83b101463a0 38-57,65-66
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "d205534b0a87ff6db1ef872f0c51f516fd4f08af",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  },
+  "sessions": {
+    "s_24e4b202bad5aa": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_1545ec32fffeqnfLn8FMeq7ZoA",
+        "model": "unknown"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
