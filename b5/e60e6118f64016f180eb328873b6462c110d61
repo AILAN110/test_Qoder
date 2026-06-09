@@ -1,0 +1,14 @@
+app.py
+  h_3ed83b101463a0 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b5e60e6118f64016f180eb328873b6462c110d61",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
