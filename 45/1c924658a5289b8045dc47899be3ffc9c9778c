@@ -1,0 +1,14 @@
+test.py
+  h_3ed83b101463a0 16-36,40-41
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "451c924658a5289b8045dc47899be3ffc9c9778c",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
