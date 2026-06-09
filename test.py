@@ -34,6 +34,10 @@ def bubble_sort_v2(arr):
     return sorted_arr
 
 
+def bubble_sort_v3(arr):
+    print("nihao ")
+
+
 if __name__ == "__main__":
     test_array = [64, 34, 25, 12, 22, 11, 90]
     print("Original array:", test_array)
