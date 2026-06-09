@@ -31,10 +31,6 @@ async def login(login_data: LoginRequest):
     else:
         raise HTTPException(status_code=401, detail="用户名或密码错误")
 
-@app.get("/")
-def read_root():
-    return {"message": "欢迎使用FastAPI登录服务"}
-
 def quick_sort(arr: list) -> list:
     """
     快速排序算法实现
@@ -48,21 +44,15 @@ def quick_sort(arr: list) -> list:
     if len(arr) <= 1:
         return arr
     
-    pivot = arr[len(arr) // 2]  # 选择中间元素作为基准
-    left = [x for x in arr if x < pivot]    # 小于基准的元素
-    middle = [x for x in arr if x == pivot] # 等于基准的元素
-    right = [x for x in arr if x > pivot]   # 大于基准的元素
+    pivot = arr[len(arr) // 2]  # 选取中间元素作为基准
+    left = [x for x in arr if x < pivot]      # 小于基准的元素
+    middle = [x for x in arr if x == pivot]   # 等于基准的元素
+    right = [x for x in arr if x > pivot]     # 大于基准的元素
     
     return quick_sort(left) + middle + quick_sort(right)
-
-def bubble_sort(arr: list) -> list:
-    n = len(arr)
-    for i in range(n):
-        for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-    return arr
-
+@app.get("/")
+def read_root():
+    return {"message": "欢迎使用FastAPI登录服务"}
 
 if __name__ == "__main__":
     import uvicorn
