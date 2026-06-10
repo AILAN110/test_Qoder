@@ -1,0 +1,19 @@
+test_vscode.py
+  s_9a43c4736950b1::t_102f3ecc187a03 1-15
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "06e3c366af9c201f63d999416988cba4f0284478",
+  "prompts": {},
+  "sessions": {
+    "s_9a43c4736950b1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_150e59c7fffeuYKPeSauVC13Yo",
+        "model": "unknown"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
