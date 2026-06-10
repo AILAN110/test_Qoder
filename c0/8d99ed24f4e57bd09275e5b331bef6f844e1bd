@@ -1,0 +1,14 @@
+test_vscode.py
+  h_3ed83b101463a0 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "c08d99ed24f4e57bd09275e5b331bef6f844e1bd",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
