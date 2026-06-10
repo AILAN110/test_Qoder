@@ -1,0 +1,24 @@
+requirements.txt
+  s_e1a851d20b2f1f::t_57a7b0f3db48dc 1-2
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "505ff86287c8e0197a81988d96e8266ca260c7bd",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  },
+  "sessions": {
+    "s_e1a851d20b2f1f": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "fc665f85-cd1a-44ea-b650-39826b94f711",
+        "model": "composer-2.5"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
