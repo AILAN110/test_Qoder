@@ -1,0 +1,14 @@
+test_claudecode.py
+  h_3ed83b101463a0 1
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "7458aafc7818bc0874d399e0e19ef2c26e8f6658",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
