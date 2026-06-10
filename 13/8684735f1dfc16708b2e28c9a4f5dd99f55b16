@@ -1,0 +1,25 @@
+test_vscode.py
+  s_9a43c4736950b1::t_102f3ecc187a03 1-8,13-17
+  h_3ed83b101463a0 9-12,18
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "138684735f1dfc16708b2e28c9a4f5dd99f55b16",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  },
+  "sessions": {
+    "s_9a43c4736950b1": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_150e59c7fffeuYKPeSauVC13Yo",
+        "model": "unknown"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
