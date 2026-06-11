@@ -28,4 +28,15 @@ if __name__ == "__main__":
     print("原始数组:", test_array)
     sorted_array = quick_sort(test_array)
     print("排序后数组:", sorted_array)
-    print("hello")
+    print("hello, world!")
+    '''
+    {
+        "human_additions":31,
+        "unknown_additions":0,
+        "ai_additions":0,
+        "ai_accepted":0,
+        "git_diff_deleted_lines":0,
+        "git_diff_added_lines":31,
+        "tool_model_breakdown":{}
+    }
+    '''
