@@ -1,0 +1,14 @@
+test_copilot.py
+  h_3ed83b101463a0 25-40
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "5feaf1bfa59a1fca1037c8d7d09ba1435a477937",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
