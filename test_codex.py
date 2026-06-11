@@ -25,3 +25,14 @@ def bubble_sort(items):
             break
 
     return result
+'''
+{
+    "human_additions":6,
+    "unknown_additions":2,
+    "ai_additions":0,
+    "ai_accepted":0,
+    "git_diff_deleted_lines":0,
+    "git_diff_added_lines":8,
+    "tool_model_breakdown":{}
+}
+'''
