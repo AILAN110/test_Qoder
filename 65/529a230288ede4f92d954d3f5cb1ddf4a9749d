@@ -1,0 +1,14 @@
+test_codex.py
+  h_3ed83b101463a0 28-38
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "65529a230288ede4f92d954d3f5cb1ddf4a9749d",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
