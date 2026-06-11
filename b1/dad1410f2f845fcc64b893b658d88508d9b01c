@@ -1,0 +1,24 @@
+test_opencode.py
+  s_01d93b6255bc03::t_ec6832f5f380a5 1-7
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "b1dad1410f2f845fcc64b893b658d88508d9b01c",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  },
+  "sessions": {
+    "s_01d93b6255bc03": {
+      "agent_id": {
+        "tool": "opencode",
+        "id": "ses_14a7b9c57ffeFRYcbbpkqowZGw",
+        "model": "unknown"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
