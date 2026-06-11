@@ -46,3 +46,15 @@ if __name__ == "__main__":
     
     bubble_sorted = bubble_sort(test_array.copy())
     print("冒泡排序结果:", bubble_sorted)
+
+    '''
+    {
+        "human_additions":48,
+        "unknown_additions":0,
+        "ai_additions":0,
+        "ai_accepted":0,
+        "git_diff_deleted_lines":0,
+        "git_diff_added_lines":48,
+        "tool_model_breakdown":{}
+    }
+    '''
