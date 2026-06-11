@@ -1,0 +1,24 @@
+test_copilot.py
+  s_c6519ef451f10b::t_d631f60183d853 1-24
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "596cd7838048f85f8ab8eab8962bb3a7478e688b",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  },
+  "sessions": {
+    "s_c6519ef451f10b": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "865c335f-a9ca-4633-be2d-9534521b93f3",
+        "model": "claude-haiku-4-5-20251001"
+      },
+      "human_author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
