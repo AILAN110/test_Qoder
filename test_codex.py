@@ -1,4 +1,12 @@
+import random
+
+
 print("")
+
+
+def generate_random_sequence(length, start=0, end=100):
+    """Return a list of random integers within the inclusive range."""
+    return [random.randint(start, end) for _ in range(length)]
 
 
 def bubble_sort(items):
