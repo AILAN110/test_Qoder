@@ -13,5 +13,20 @@ def bubble_sort(arr):
                 arr[j], arr[j + 1] = arr[j + 1], arr[j]
     return arr
 
-
+'''
+{
+    "human_additions":0,
+    "unknown_additions":0,
+    "ai_additions":7,
+    "ai_accepted":7,
+    "git_diff_deleted_lines":0,
+    "git_diff_added_lines":7,
+    "tool_model_breakdown":{
+        "opencode::unknown":{
+            "ai_additions":7,
+            "ai_accepted":7
+        }
+    }
+}
+'''
 print("")
