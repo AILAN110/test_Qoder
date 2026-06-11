@@ -1,0 +1,14 @@
+test_opencode.py
+  h_3ed83b101463a0 16-31
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.5.6",
+  "base_commit_sha": "ce8492048815b6b235f5309831813f1d68c8d2d0",
+  "prompts": {},
+  "humans": {
+    "h_3ed83b101463a0": {
+      "author": "AILAN110 <1032163939@qq.com.com>"
+    }
+  }
+}
