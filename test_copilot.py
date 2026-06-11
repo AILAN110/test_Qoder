@@ -22,3 +22,19 @@ if __name__ == "__main__":
 
     words = ["banana", "apple", "cherry", "date"]
     print(f"Words sorted: {sort_strings(words)}")
+    '''
+    {
+        "human_additions":0,
+        "unknown_additions":0,
+        "ai_additions":24,
+        "ai_accepted":24,
+        "git_diff_deleted_lines":0,
+        "git_diff_added_lines":24,
+        "tool_model_breakdown":{
+            "claude::claude-haiku-4-5-20251001":{
+                "ai_additions":24,
+                "ai_accepted":24
+            }
+        }
+    }
+    '''
